@@ -1,0 +1,25 @@
+info:
+  version: 1.0.0
+  title: Pet Hotel
+servers:
+  - url: http://www.pet-cribs.com/api/v1
+paths:
+  /hotels:
+      get:
+        summary: List all hotels
+      post:
+        summary: Create a new hotel.
+  /hotels/{id}:
+    get:
+      summary: Get the hotel with the specified id.
+  /hotels/{id}/pets:
+    get:
+      summary: Get the pets that are currently staying in the hotel with the specified id.
+components:
+  schemas:
+    Hotel:
+      properties:
+        name:
+          type: string
+        id:
+          type: integer
