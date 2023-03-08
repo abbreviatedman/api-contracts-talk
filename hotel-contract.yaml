@@ -19,14 +19,14 @@ components:
   schemas:
     Hotel:
       properties:
+        id:
+          type: integer
         name:
           type: string
         location:
           type: string
         pet-type:
           type: string
-        id:
-          type: integer
     Pet:
       properties:
         id:
