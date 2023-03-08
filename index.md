@@ -70,7 +70,7 @@ This is the old way of doing things.
 3. Define integration points, i.e., endpoints.
 4. Look at what capabilities are needed for the system to function given its environment.
 5. Design and implement the API itself.
-6. Implement the frontend and backend.
+6. Integrate the frontend and backend.
 
 ---
 
@@ -130,17 +130,17 @@ Let's spend 20 minutes seeing if we can identify the parts of this contract.
 ### Solution 1
 
 - The base url is `http://petstore.swagger.io/v1`
-- It does _not_ have an API prefix, using a `swagger.io` sub-domain to mark the URL as an API one.
+- It does _not_ have an API prefix, using a `swagger.io` sub-domain to mark the URL as an API URL.
 - The version is 1.
 - The endpoints are `/pets` and `/pets/{petId}`.
 - The HTTP verbs for `/pets` are GET and POST. Only GET is used for `/pets/{petId}`.
-- A Pet object has two attributes: `id` and `name`.
+- A Pet object has three attributes: `id`, `name`, and `tag`.
 
 ---
 
 ### Exercise 2: Writing A Contract
 
-We'll spend 45 minutes writing out a contract in YAML.
+We'll spend ~45 minutes writing out a contract in YAML.
 
 ---
 
@@ -150,7 +150,7 @@ We'll spend 45 minutes writing out a contract in YAML.
 2. Use the contract pattern from the example to define the following **endpoints**:
   - Get all hotels.
   - Create a new hotel.
-  - Get a hotel with the specified `id`.
+  - Get one specific hotel.
   - Get the pets that are currently staying in a specific hotel.
 3. Use the contract pattern from the example to define the following **data shape**. A hotel should have a
   - `name`
@@ -174,15 +174,41 @@ We'll spend 45 minutes writing out a contract in YAML.
 
 ### Solution 2
 
-Hosted here:
+Hosted here: https://github.com/abbreviatedman/api-contracts-talk/blob/main/hotel-contract.yaml
+
+---
+
+## Turning Contracts Into Documentation
+
+If you follow the OpenAPI standard for writing contracts, your contract will not only be **human-readable documentation**, but you can turn it into a **documentation app** with tools like SwaggerHub.
+
+Generative Documentation tools like SwaggerHub use data (in this case, YAML or JSON data) to generate an entire app.
+
+---
+
+### An Example Swagger Page
+
+Let's see it in action.
+
+Go to https://editor-next.swagger.io/ and click on the File menu at the top. Choose "Load Example" and, from the drop-down menu, "OpenAPI 3.0 Petstore".
+
+(Make sure it's the **3.0** version!)
+
+---
+
+### The Ability To Generate Documentation From Design Document Is HUGE
+
+And it's not all that tools like **Swagger** and **Swagger**Hub can do.
+
+So having a **contract** for your **API** is not only important to the **design process**, bu the management of the API _throughout_ its **lifecycle**.
 
 ---
 
 <!-- splash-page -->
 
-# The API Lifecycle Is Complete
+# Prioritizing APIs With Contracts
 
-### Cue "The Circle Of Life" from The Lion King!
+### That's API-First!
 
 
 

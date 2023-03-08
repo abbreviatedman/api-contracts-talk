@@ -21,5 +21,21 @@ components:
       properties:
         name:
           type: string
+        location:
+          type: string
+        pet-type:
+          type: string
         id:
+          type: integer
+    Pet:
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        species:
+          type: string
+        age:
+          type: integer
+        weight:
           type: integer
